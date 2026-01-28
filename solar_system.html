@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div class="sun"></div>
+
+        <!-- Mercury -->
+        <div class="orbit mercury-orbit">
+            <div class="planet mercury"></div>
+        </div>
+
+        <!-- Venus -->
+        <div class="orbit venus-orbit">
+            <div class="planet venus"></div>
+        </div>
+
+        <!-- Earth -->
+        <div class="orbit earth-orbit">
+            <div class="planet earth"></div>
+        </div>
+
+        <!-- Mars -->
+        <div class="orbit mars-orbit">
+            <div class="planet mars"></div>
+        </div>
+
+        <!-- Jupiter -->
+        <div class="orbit jupiter-orbit">
+            <div class="planet jupiter"></div>
+        </div>
+
+        <!-- Saturn -->
+        <div class="orbit saturn-orbit">
+            <div class="planet saturn"></div>
+        </div>
+
+        <!-- Uranus -->
+        <div class="orbit uranus-orbit">
+            <div class="planet uranus"></div>
+        </div>
+
+        <!-- Neptune -->
+        <div class="orbit neptune-orbit">
+            <div class="planet neptune"></div>
+        </div>
+
+        <div class="controls">
+            <h3>Solar System Controls</h3>
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+
+            <div class="speed-control">
+                <label for="speedSlider">Animation Speed:</label>
+                <input type="range" id="speedSlider" min="0.1" max="5" step="0.1" value="1">
+                <span id="speedValue">1x</span>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>About Our Solar System</h3>
+            <p>This simulation shows the relative positions and movements of the planets in our solar system.</p>
+            <p>Each planet orbits the sun at different speeds and distances, following Kepler's laws of planetary motion.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

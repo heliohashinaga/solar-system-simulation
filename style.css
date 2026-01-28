@@ -1,0 +1,243 @@
+/*
+ * Solar System Simulation - CSS Styles
+ * This file contains all the styling for the solar system visualization
+ */
+
+/* Basic page setup */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background to simulate space */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Container for the entire solar system */
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sun at the center of the solar system */
+.sun {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ffd700, #ff8c00, #ff4500); /* Gradient to simulate sun's glow */
+    border-radius: 50%;
+    box-shadow: 0 0 50px #ff4500, 0 0 100px #ff8c00; /* Glow effect */
+    z-index: 10;
+}
+
+/* Orbit paths for planets */
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Faint orbit lines */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base planet styling */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the planet at its position */
+}
+
+/* Individual planet styles and orbits */
+
+/* Mercury */
+.mercury-orbit {
+    width: 120px;
+    height: 120px;
+}
+
+.mercury {
+    width: 6px;
+    height: 6px;
+    background: #8c7853; /* Mercury's grayish-brown color */
+    box-shadow: 0 0 5px #8c7853;
+}
+
+/* Venus */
+.venus-orbit {
+    width: 170px;
+    height: 170px;
+}
+
+.venus {
+    width: 12px;
+    height: 12px;
+    background: #ffc649; /* Venus's yellowish color */
+    box-shadow: 0 0 10px #ffc649;
+}
+
+/* Earth */
+.earth-orbit {
+    width: 230px;
+    height: 230px;
+}
+
+.earth {
+    width: 13px;
+    height: 13px;
+    background: linear-gradient(to right, #4F94CD, #347C98); /* Blue colors representing Earth */
+    box-shadow: 0 0 10px #1E90FF;
+}
+
+/* Mars */
+.mars-orbit {
+    width: 290px;
+    height: 290px;
+}
+
+.mars {
+    width: 10px;
+    height: 10px;
+    background: #CD5C5C; /* Red color representing Mars */
+    box-shadow: 0 0 8px #CD5C5C;
+}
+
+/* Jupiter */
+.jupiter-orbit {
+    width: 360px;
+    height: 360px;
+}
+
+.jupiter {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(to right, #D2B48C, #DEB887); /* Jupiter's tan/beige colors */
+    box-shadow: 0 0 20px #DEB887;
+}
+
+/* Saturn */
+.saturn-orbit {
+    width: 440px;
+    height: 440px;
+}
+
+.saturn {
+    width: 24px;
+    height: 24px;
+    background: #FAD5A5; /* Saturn's golden color */
+    box-shadow: 0 0 15px #FAD5A5;
+}
+
+/* Saturn's rings */
+.saturn::after {
+    content: '';
+    position: absolute;
+    width: 38px;
+    height: 8px;
+    background: rgba(210, 180, 140, 0.5); /* Semi-transparent ring */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+}
+
+/* Uranus */
+.uranus-orbit {
+    width: 500px;
+    height: 500px;
+}
+
+.uranus {
+    width: 16px;
+    height: 16px;
+    background: #4FD0E4; /* Light blue color representing Uranus */
+    box-shadow: 0 0 10px #4FD0E4;
+}
+
+/* Neptune */
+.neptune-orbit {
+    width: 560px;
+    height: 560px;
+}
+
+.neptune {
+    width: 15px;
+    height: 15px;
+    background: #4B70DD; /* Deep blue color representing Neptune */
+    box-shadow: 0 0 10px #4B70DD;
+}
+
+/* Control panel styling */
+.controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.controls h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #4FC3F7; /* Light blue header text */
+}
+
+/* Button styles */
+button {
+    background: #1a237e; /* Dark blue background */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #283593; /* Slightly lighter blue on hover */
+}
+
+button.active {
+    background: #4FC3F7; /* Light blue when active */
+    box-shadow: 0 0 10px #4FC3F7;
+}
+
+/* Speed control slider */
+.speed-control {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+/* Information panel */
+.info-panel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-panel h3 {
+    margin-top: 0;
+    color: #4FC3F7; /* Light blue header text */
+}
